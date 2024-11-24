@@ -119,3 +119,6 @@
    ip addr add 192.168.1.197/24 dev macvlan0
    ip link set macvlan0 up
    ```
+
+![image](https://github.com/user-attachments/assets/2fda4f1d-61d3-4954-9ef5-0be97d1ae52d)
+![image](https://github.com/user-attachments/assets/2c740567-f806-4fea-af56-b8a824a86f44)
