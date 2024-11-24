@@ -21,57 +21,55 @@
 
 2. Создать на машине А файл docker-compose.yml, содержимое можно взять из репозитоиря.
 
-   ```yml
-version: '3.7'
+   version: '3.7'
 
-services:
-  cassandra1:
-    image: cassandra:latest
-    container_name: inst_cassandra1
-    networks:
-      cassandra_network:
-        ipv4_address: 192.168.1.200
-    volumes:
-      - cassandra_data1:/var/lib/cassandra
-    ports:
-      - "9042:9042"
+   services:
+   cassandra1:
+      image: cassandra:latest
+      container_name: inst_cassandra1
+      networks:
+         cassandra_network:
+         ipv4_address: 192.168.1.200
+      volumes:
+         - cassandra_data1:/var/lib/cassandra
+      ports:
+         - "9042:9042"
 
-  cassandra2:
-    image: cassandra:latest
-    container_name: inst_cassandra2
-    networks:
-      cassandra_network:
-        ipv4_address: 192.168.1.201
-    volumes:
-      - cassandra_data2:/var/lib/cassandra
-    ports:
-      - "9042:9042"
+   cassandra2:
+      image: cassandra:latest
+      container_name: inst_cassandra2
+      networks:
+         cassandra_network:
+         ipv4_address: 192.168.1.201
+      volumes:
+         - cassandra_data2:/var/lib/cassandra
+      ports:
+         - "9042:9042"
 
-  cassandra3:
-    image: cassandra:latest
-    container_name: inst_cassandra3
-    networks:
-      cassandra_network:
-        ipv4_address: 192.168.1.202
-    volumes:
-      - cassandra_data3:/var/lib/cassandra
-    ports:
-      - "9042:9042"
+   cassandra3:
+      image: cassandra:latest
+      container_name: inst_cassandra3
+      networks:
+         cassandra_network:
+         ipv4_address: 192.168.1.202
+      volumes:
+         - cassandra_data3:/var/lib/cassandra
+      ports:
+         - "9042:9042"
 
-networks:
-  cassandra_network:
-    driver: macvlan
-    driver_opts:
-      parent: eth1
-    ipam:
-      config:
-        - subnet: "192.168.1.0/24"
+   networks:
+   cassandra_network:
+      driver: macvlan
+      driver_opts:
+         parent: eth1
+      ipam:
+         config:
+         - subnet: "192.168.1.0/24"
 
-volumes:
-  cassandra_data1:
-  cassandra_data2:
-  cassandra_data3:
-
+   volumes:
+   cassandra_data1:
+   cassandra_data2:
+   cassandra_data3:
 
 3. Выполняем из рабочей директории, где находится файл docker-compose.yml.
 
