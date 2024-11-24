@@ -19,7 +19,7 @@
    ```bash
    sudo apt update
    sudo apt install docker.io docker-compose -y
-
+   ```
 2. Создать на машине А файл docker-compose.yml, содержимое можно взять из репозитоиря.
 
    ```yml
@@ -72,13 +72,13 @@
    cassandra_data1:
    cassandra_data2:
    cassandra_data3:
-
+   ```
 
 3. Выполняем из рабочей директории, где находится файл docker-compose.yml.
 
    ```bash
    docker-compose up -d
-
+   ```
 Проверяем работу контейнеров.
 
    ```bash
@@ -91,7 +91,7 @@
    ```bash
    apt update
    apt install cassandra
-
+   ```
 Если будет ошибка об отсувствии пакета выполнить команды.
 
    ```bash
@@ -99,14 +99,14 @@
    curl https://downloads.apache.org/cassandra/KEYS | sudo apt-key add -
    apt update
    apt install cassandra
-
+   ```
 Проверка доступности контейнеров.
 
    ```bash
    cqlsh 192.168.1.200
    cqlsh 192.168.1.201
    cqlsh 192.168.1.202
-
+   ```
 
 ## Примичания
 
@@ -118,4 +118,4 @@
    ip link add macvlan0 link eth1 type macvlan mode bridge
    ip addr add 192.168.1.197/24 dev macvlan0
    ip link set macvlan0 up
-
+   ```
