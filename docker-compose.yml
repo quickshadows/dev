@@ -3,14 +3,10 @@ version: '3.7'
 services:
   cassandra1:
     image: cassandra:latest
-    container_name: cassandra1
+    container_name: inst_cassandra1
     networks:
       cassandra_network:
         ipv4_address: 192.168.1.200
-    environment:
-      - CASSANDRA_CLUSTER_NAME=CassandraCluster
-      - CASSANDRA_DC=dc1
-      - CASSANDRA_RACK=rack1
     volumes:
       - cassandra_data1:/var/lib/cassandra
     ports:
@@ -18,14 +14,10 @@ services:
 
   cassandra2:
     image: cassandra:latest
-    container_name: cassandra2
+    container_name: inst_cassandra2
     networks:
       cassandra_network:
         ipv4_address: 192.168.1.201
-    environment:
-      - CASSANDRA_CLUSTER_NAME=CassandraCluster
-      - CASSANDRA_DC=dc1
-      - CASSANDRA_RACK=rack1
     volumes:
       - cassandra_data2:/var/lib/cassandra
     ports:
@@ -33,14 +25,10 @@ services:
 
   cassandra3:
     image: cassandra:latest
-    container_name: cassandra3
+    container_name: inst_cassandra3
     networks:
       cassandra_network:
         ipv4_address: 192.168.1.202
-    environment:
-      - CASSANDRA_CLUSTER_NAME=CassandraCluster
-      - CASSANDRA_DC=dc1
-      - CASSANDRA_RACK=rack1
     volumes:
       - cassandra_data3:/var/lib/cassandra
     ports:
